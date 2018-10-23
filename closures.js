@@ -177,11 +177,11 @@ function secretNumber() {
 
   return {
     addToSecret: function(parameter) {
-      secret + parameter;
+      secret += parameter;
       return secret;
     },
     takeAwayFromSecret: function(parameter) {
-      secret - parameter;
+      secret -= parameter;
       return secret;
     }
   };
@@ -208,10 +208,13 @@ secretNumber.takeAwayFromSecret(parameter);
 */
 
 function timeOutCounter() {
-  for (var i = 0; i <= 5; i++) {
+  function timer(i) {
     setTimeout(function() {
       console.log(i);
     }, i * 1000);
+  }
+  for (var i = 0; i <= 5; i++) {
+    timer(i);
   }
 }
 timeOutCounter();
